@@ -1,0 +1,534 @@
+/*
+Template Name: PuriAsri
+Template URI: -
+Description: Template for PuriAsri
+Author: bayuslari
+Author URI: bayuslari.com
+Version: 1.0
+*/
+
+
+/**
+* Table of Contents:
+*
+* 1. - GLOBAL STYLES
+*      1.1 - General Styles
+*      1.2 - Text Color
+*      1.3 - Anchor
+*      1.4 - Heading and Paragraph
+*      1.5 - Spacing
+* 
+* 2. - COMPONENTS
+*      2.1 - Buttons  
+*      2.2 - Divider
+*      2.3 - Overlay and BG Fixed
+*      2.4 - Preloader
+*      2.5 - Skills Meter
+*      2.6 - Background Changer
+*      2.7 - Back to Top Button
+* 3. - LOGO & NAVIGATION
+* 4. - HOME
+*      4.1 - Hero
+*      4.2 - Slideshow
+*      4.3 - Text Typing
+*      4.4 - App Hero
+* 5. - SECTION
+*      5.1 Section - Profile
+*      5.2 Section - Counter
+*      5.3 Section - Profile-2
+*      5.4 Section - Portfolios
+*      5.5 Section - ServiceS
+*      5.6 Section - Features
+*      5.7 Section - Teams
+*      5.8 Section - Price
+*      5.9 Section - Blog
+*      5.10 Section - Timeline
+*      5.11 Section - Testimonial
+*      5.12 Section - Clients
+*      5.13 Section - Video BG
+*      5.14 Section - Contact and Map
+* 6. - FOOTER
+*      6.1 Subscribe
+*      6.2 Social Media 
+* 7. - RESPONSIVE
+* -----------------------------------------------------------------------------
+*/
+
+
+/**
+* 1. GLOBAL STYLES
+* -----------------------------------------------------------------------------
+*/
+
+
+/*1.1 GENERAL STYLES*/
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 25px;
+    overflow-x: hidden;
+    color: #2e2e2e;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+/* 1.2. TEXT COLOR */
+
+$black: #333;
+$muted: #939393;
+$grey: #f5f5f5;
+$white: #fff;
+$base: #e2b55d;
+.black-color {
+    color: $base;
+}
+
+.muted-color {
+    color: $muted;
+}
+
+.grey-color {
+    color: $base;
+}
+
+.base-color {
+    color: $base;
+}
+
+.white-color {
+    color: $white;
+}
+
+
+/* 1.3. ANCHOR */
+
+a {
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: $base;
+    outline: none;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    color: $base;
+    outline: none;
+}
+
+
+/* 1.4. HEADING & PARAGRAPH */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p {
+    font-weight: 400;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+
+/* 1.5 Spacing  */
+
+.p0 {
+    padding: 0 !important;
+}
+
+@for $i from 1 through 10 {
+    .p#{$i} {
+        padding: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pt#{$i} {
+        padding-top: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pb#{$i} {
+        padding-bottom: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pl#{$i} {
+        padding-left: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pr#{$i} {
+        padding-right: 10px * $i !important;
+    }
+}
+
+.m0 {
+    margin: 0 !important;
+}
+
+@for $i from 1 through 10 {
+    .mt#{$i} {
+        margin-top: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mb#{$i} {
+        margin-bottom: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .ml#{$i} {
+        margin-left: 10px * $i !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mr#{$i} {
+        margin-right: 10px * $i !important;
+    }
+}
+
+
+/**
+* #. HEADER
+* -----------------------------------------------------------------------------
+*/
+
+
+/* Header Top */
+
+#header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#section-header-top {
+    transition: height .2s ease-in-out;
+    border-bottom: none;
+    background-color: $white;
+}
+
+.sticky-header-on #section-header-top {
+    overflow: hidden;
+    height: 0;
+}
+
+@media (min-width: 992px) {
+    #section-header-top {
+        height: 35px;
+        min-height: auto;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .navbar-brand-centered {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        display: block;
+        height: auto;
+        margin-left: -140px;
+        padding: 0;
+        text-align: center;
+    }
+    .navbar > .container .navbar-brand-centered,
+    .navbar > .container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+    .sticky-header-on .navbar-brand {
+        top: -35px;
+        transform: scale(.6);
+    }
+    .navbar-brand {
+        transition: all .2s ease-in-out;
+        img {
+            width: 280px;
+        }
+    }
+    .navbar-nav > li > a {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: $muted;
+    }
+}
+
+#header-top {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a {
+        color: $muted;
+    }
+}
+
+
+/* Header Middle */
+
+#section-header-middle {
+    background: $white;
+}
+
+
+/* Hero Content */
+
+.vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.jumbotron {
+    color: $white;
+    background-color: transparent;
+}
+
+
+/* 2.1. BUTTONS */
+
+:focus {
+    outline: none;
+}
+
+.btn {
+    &.btn-custom {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        margin-right: 5px;
+        padding: 8px 20px;
+        transition: all .3s ease-in-out;
+        vertical-align: top;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 3px;
+        background-color: $base;
+        &:hover {
+            background-color: darken($base, 7%);
+        }
+        &.btn-wire {
+            color: $base;
+            border: 1px solid $base;
+            background-color: transparent;
+            &:hover {
+                color: #fff;
+                background-color: $base;
+            }
+        }
+        & > i {
+            padding-right: 2px;
+        }
+        &.btn-lg {
+            @media (max-width: 767px) {
+                font-size: 1rem;
+                line-height: 1.4;
+                padding: 6px 12px;
+            }
+        }
+        &.btn-circle {
+            line-height: 46px;
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            border-radius: 50%;
+            box-shadow: none;
+            &.btn-lg {
+                line-height: 52px;
+                width: 54px;
+                height: 54px;
+            }
+            &.btn-sm {
+                line-height: 38px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+
+/* Slider */
+
+.owl-buttons {
+    position: static;
+}
+
+.owl-prev,
+.owl-next {
+    font-size: 1rem;
+    line-height: 105px;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    display: block;
+    width: 105px;
+    height: 105px;
+    margin-top: -35px;
+    -webkit-transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    -moz-transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    text-align: center;
+    opacity: 0;
+    color: #111;
+}
+
+.owl-prev {
+    left: -50px;
+}
+
+.owl-next {
+    right: -50px;
+}
+
+.owl-prev:before,
+.owl-next:before {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    display: block;
+    width: 66%;
+    height: 66%;
+    content: '';
+    -webkit-transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    -moz-transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    transition: all .27s cubic-bezier(.000, .000, .580, 1.000);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+.owl-next:before {
+    right: 0;
+    left: auto;
+}
+
+.owl-prev .fa,
+.owl-next .fa {
+    position: relative;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    -webkit-transition: 0 none !important;
+    -moz-transition: 0 none !important;
+    transition: 0 none !important;
+}
+
+.owl-prev:hover:before,
+.owl-next:hover:before {
+    opacity: .87;
+}
+
+.owl-prev:active:before,
+.owl-next:active:before {
+    opacity: .6;
+}
+
+.owl-carousel:hover .owl-prev {
+    left: -35px;
+    opacity: 1;
+}
+
+.owl-carousel:hover .owl-next {
+    right: -35px;
+    opacity: 1;
+}
+
+
+/* Section BG */
+
+.section-bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.block-bg {
+    opacity: .9;
+    background-color: $white;
+}
+
+
+/* Footer-Top */
+
+#footer {
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+#section-footer-top {
+    color: $white;
+    background-color: darken($base, 20%);
+}
+
+#section-footer-middle {
+    color: $white;
+    background-color: darken($base, 40%);
+}
+
+.footer-contact-item a {
+    color: $white;
+    font-size: 0.8rem;
+}
